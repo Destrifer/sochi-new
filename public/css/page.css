@@ -1,0 +1,14 @@
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Inter:400,500,700);
+/* mixins */
+/* colors */
+/* sizes */
+main .page {
+  padding-bottom: 15px;
+}
+
+main .page h1 {
+  display: block;
+  text-align: center;
+  padding: calc(1em + (2 - 1) * (100vw - 36em) / 84);
+}

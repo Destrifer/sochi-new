@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Inter:400,500,700);
+/* mixins */
+/* colors */
+/* sizes */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2em + (3 - 2) * (100vw - 36em) / 84);
+}
+main .swiper-container {
+  overflow: hidden;
+  position: relative;
+}
+main .swiper-container img {
+  min-width: 100%;
+}
+main .benefit-block .benefit-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+main .benefit-block .benefit-items .item {
+  flex: 1 1 300px;
+  background: #f3f4f7;
+  padding: calc(1em + (2 - 1) * (100vw - 36em) / 84);
+  border-radius: 1em;
+}
+main .benefit-block .benefit-items .item img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(134.91deg, #0571d4 -5.93%, #004989 97.53%);
+  border-radius: 100%;
+  padding: 10px;
+}
+main .benefit-block .benefit-items .item strong {
+  margin: 0.6em 0;
+  display: block;
+}
+main .bot-form-block {
+  width: 100%;
+  background: url(/img/form.jpg) no-repeat center;
+  padding: 20px 0 60px 0;
+}
+@media (max-width: 768px) {
+  main .bot-form-block {
+    padding-bottom: 20px;
+  }
+}
+main .bot-form-block .container .bot-form {
+  min-width: 300px;
+  max-width: 590px;
+  float: right;
+}
+main .bot-form-block .container .bot-form p {
+  text-align: center;
+  color: #fff;
+  font-size: calc(1.5em + (2 - 1.5) * (100vw - 36em) / 84);
+  font-weight: bold;
+  margin: 0.8em 0;
+}
+main .bot-form-block .container .bot-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .bot-form-block .container .bot-form form input,
+main .bot-form-block .container .bot-form form select,
+main .bot-form-block .container .bot-form form textarea {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  min-height: 60px;
+  font-size: 16px;
+  line-height: 24px;
+}
+main .bot-form-block .container .bot-form form .double {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+main .bot-form-block .container .bot-form form .double > * {
+  flex: 1;
+}
+main .bot-form-block .container .bot-form form label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  min-height: 60px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 60px;
+}
+main .bot-form-block .container .bot-form form label::after {
+  content: "Прикрепите резюме";
+  position: absolute;
+}
+main .bot-form-block .container .bot-form form input[type=file] {
+  opacity: 0;
+}
+main .bot-form-block .container .bot-form form button {
+  background: hsla(0, 0%, 100%, 0.24);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+}

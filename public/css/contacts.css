@@ -1,0 +1,48 @@
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Inter:400,500,700);
+/* mixins */
+/* colors */
+/* sizes */
+main .contact-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 15px;
+}
+main .contact-block div {
+  flex: 1 1 300px;
+}
+main .contact-block .left,
+main .contact-block .right {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.5em + (1 - 0.5) * (100vw - 36em) / 84);
+}
+main .contact-block header {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+  color: #172335;
+}
+main .contact-block span {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #556277;
+  display: block;
+}
+main .contact-block .left strong,
+main .contact-block .left a {
+  display: block;
+}
+main .contact-block .left a {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #5394fd;
+  margin-top: 10px;
+}
+main .contact-block .left strong {
+  margin: 6px 0;
+}
