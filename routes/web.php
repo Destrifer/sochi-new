@@ -25,7 +25,7 @@ Route::get('/public/about', function () {
 });
 
 Route::get('/', [IndexController::class, 'index']);
-Route::get('/cars', [CarsController::class, 'index'])->name('cars.index');
+Route::view('/cars', 'cars.index');
 Route::get('/cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 Route::get('/about/', [IndexController::class, 'about']);
 Route::get('/contacts/', [IndexController::class, 'contacts']);
