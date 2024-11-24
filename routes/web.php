@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CarsController;
 use App\Http\Controllers\FormController;
 
 /*
@@ -24,6 +25,8 @@ Route::get('/public/about', function () {
 });
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/cars', [CarsController::class, 'index'])->name('cars.index');
+Route::get('/cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 Route::get('/about/', [IndexController::class, 'about']);
 Route::get('/contacts/', [IndexController::class, 'contacts']);
 Route::get('/{slug}/', [IndexController::class, 'page']);
