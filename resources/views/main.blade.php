@@ -115,6 +115,34 @@
         </div>
     </footer>
     <script>
+        function updateAddress() {
+            const select = document.getElementById('address-select');
+            const selectedOption = select.options[select.selectedIndex];
+            const selectedValue = selectedOption.value;
+            const selectedAddress = selectedOption.getAttribute('data-address');
+
+            // Обновляем текст с выбранным адресом
+            document.getElementById('address-display').textContent = `Выбранный адрес: ${selectedAddress}`;
+
+            // Выполняем запрос к серверу
+            fetch(
+                    `/cars-list?from-id=${selectedValue}&to-id=${selectedValue}&from-date=27.11.2024&to-date=02.12.2024&per-page=5`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Ошибка загрузки данных');
+                    }
+                    return response.text(); // Ожидаем HTML
+                })
+                .then(html => {
+                    // Вставляем полученный HTML
+                    document.getElementById('cars-list-container').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+        }
+    </script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const swipers = document.querySelectorAll('.swiper-container');
             swipers.forEach(function(swiperContainer) {
