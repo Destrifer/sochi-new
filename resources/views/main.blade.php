@@ -53,16 +53,14 @@
         <div class="top-line">
             <div class="container">
                 <div id="address-container">
-                    <div id="address-container">
-                        <label for="address-select">Выберите адрес:</label>
-                        <select id="address-select" onchange="updateAddress()">
-                            <option value="10" data-address="г. Москва, ул. Ленина, 1" selected>Адрес 1</option>
-                            <option value="11" data-address="г. Санкт-Петербург, Невский проспект, 100">Адрес 2
-                            </option>
-                            <option value="12" data-address="г. Казань, ул. Баумана, 50">Адрес 3</option>
-                        </select>
-                        <p id="address-display">Выбранный адрес: г. Москва, ул. Ленина, 1</p>
-                    </div>
+                    <label for="address-select">Выберите адрес:</label>
+                    <select id="address-select" onchange="updateAddress()">
+                        <option value="10" data-address="г. Москва, ул. Ленина, 1" selected>Адрес 1</option>
+                        <option value="11" data-address="г. Санкт-Петербург, Невский проспект, 100">Адрес 2
+                        </option>
+                        <option value="12" data-address="г. Казань, ул. Баумана, 50">Адрес 3</option>
+                    </select>
+                    <p id="address-display">Выбранный адрес: г. Москва, ул. Ленина, 1</p>
                 </div>
             </div>
             <nav class="container">
