@@ -51,7 +51,7 @@
 <body>
     <header class="header">
         <div class="top-line">
-            <div class="container">
+            {{-- <div class="container">
                 <div id="address-container">
                     <label for="address-select">Выберите адрес:</label>
                     <select id="address-select" onchange="updateAddress()">
@@ -62,19 +62,39 @@
                     </select>
                     <p id="address-display">Выбранный адрес: г. Москва, ул. Ленина, 1</p>
                 </div>
-            </div>
+            </div> --}}
             <nav class="container">
+
                 <section>
-                    <a href="/" class="logo"></a>
-                    {{ menu('Main', 'menu') }}
+                    <div class="">
+                        <a href="/" class="logo"></a>
+                    </div>
+                    <div class="right">
+                        <div class="phone">
+                            <a href="tel:+78622777333">+7 (8622) 777-333</a>
+                            <button>Оставить заявку</button>
+                            <div class="soc-block">
+                                <a href="https://wa.me/79952260541" target='_blank'><img src="/img/wa.svg"
+                                        alt=""></a>
+                                <a href="https://t.me/sochirentacar_manager" target='_blank'><img src="/img/tg.svg"
+                                        alt=""></a>
+                                <div class="mob-menu">
+                                    <label class="hamburger-menu">
+                                        <input type="checkbox" />
+                                    </label>
+                                    <aside class="sidebar">
+                                        {{ menu('Main', 'menu') }}
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="desk-menu">
+                            {{ menu('Main', 'menu') }}
+                        </div>
+                    </div>
                 </section>
-                <div class="phone">
-                    <a href="https://wa.me/79952260541" target='_blank'><img src="img/wa.svg" alt=""></a>
-                    <a href="https://t.me/sochirentacar_manager" target='_blank'><img src="img/tg.svg"
-                            alt=""></a>
-                    <a href="tel:+78622777333">+7 (8622) 777-333</a>
-                </div>
             </nav>
+        </div>
     </header>
 
     <main>
@@ -126,7 +146,8 @@
 
             // Выполняем запрос к серверу
             fetch(
-                    `/cars-list?from-id=${selectedValue}&to-id=${selectedValue}&from-date=27.11.2024&to-date=02.12.2024&per-page=5`)
+                    `/cars-list?from-id=${selectedValue}&to-id=${selectedValue}&from-date=27.11.2024&to-date=02.12.2024&per-page=5`
+                )
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Ошибка загрузки данных');

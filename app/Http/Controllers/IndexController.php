@@ -12,7 +12,6 @@ class IndexController extends Controller
 {
     $slides = Slide::all();
 
-        // Передаём машины в шаблон
         return view('index', [
             'slides' => $slides,
         ]);

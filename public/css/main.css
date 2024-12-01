@@ -1,6 +1,16 @@
 /* fonts */
 @import url(https://fonts.googleapis.com/css?family=Inter:400,500,700);
 
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
 /* mixins */
 /* colors */
 /* sizes */
@@ -86,41 +96,99 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1em !important;
+	padding: 1em 1em 0;
 }
 
 .header nav section {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 1em;
+	flex-grow: 1;
+}
+
+.header nav section .right {
+	flex-grow: 1;
 }
 
 .header nav section .menu {
 	display: flex;
-	gap: calc(1em + (2 - 1) * (100vw - 36em) / 84);
-	font-size: calc(0.8em + (1.2 - 0.8) * (100vw - 36em) / 84);
+	/*gap: calc(1em + (2 - 1) * (100vw - 36em) / 84);
+	font-size: calc(0.8em + (1.2 - 0.8) * (100vw - 36em) / 84);*/
+	font-weight: 600;
+	font-size: 14px;
+	text-transform: uppercase;
+	list-style: none;
+	justify-content: space-between;
 }
 
-@media (max-width: 510px) {
-	.header nav section .menu {
-		display: none;
-	}
+.header nav section .menu>li {
+	position: relative;
+}
+
+.header nav section .menu>li>ul {
+	position: absolute;
+	top: 100%;
+	/* Располагаем под родительским элементом */
+	left: 0;
+	z-index: 10;
+	display: none;
+	/* Скрываем подменю по умолчанию */
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	/* padding: 0.5em 1em; */
+	list-style: none;
+}
+
+.header nav section .menu>li:hover>ul {
+	display: block;
+	/* Показываем подменю при наведении */
 }
 
 .header nav section .logo {
 	height: 32px;
-	width: 285px;
+	width: 280px;
 	background-image: url("/img/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 	.header nav section .logo {
 		height: 32px;
 		width: 50px;
 		content: url("/img/logo-min.svg");
+	}
+}
+
+@media (max-width: 768px) {
+	.header nav {
+		padding: 1em;
+	}
+
+	.header nav section .desk-menu {
+		display: none;
+	}
+
+}
+
+@media (max-width: 640px) {
+	.header nav section .soc-block a {
+		display: none;
+	}
+}
+
+@media (max-width: 540px) {
+	.header nav section button {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.header nav section .mob-menu {
+		display: none;
 	}
 }
 
@@ -129,56 +197,48 @@ main {
 	flex-direction: row;
 	gap: 10px;
 	align-items: center;
+	justify-content: space-between;
+}
+
+.header nav .phone button {
+	font-weight: 600;
+	font-size: 14px;
+	background: #0571d4;
+	padding: 10px;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 10px;
 }
 
 .header nav .phone a img {
 	width: 32px;
 }
 
-.header nav .phone a:last-child {
-	font-size: calc(1em + (1.2 - 1) * (100vw - 36em) / 84);
-	font-weight: 500;
+.header nav .phone .soc-block {
+	display: flex;
+	gap: 1em;
+	align-items: center;
 }
 
-/* Основной стиль для меню */
-ul.menu {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-ul.menu>li {
+.header nav .phone a:first-child {
+	font-weight: 700;
+	font-size: 22px;
 	position: relative;
 }
 
-ul.menu>li>a {
-	text-decoration: none;
-	padding: 10px;
-	display: block;
-}
-
-/* Стиль для подменю */
-ul.submenu {
-	display: none;
+.header nav .phone a:first-child:after {
+	content: "";
 	position: absolute;
-	/*top: 100%;*/
 	left: 0;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	width: max-content;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #d2d6dc;
 }
 
-/* Показываем подменю при наведении на родительский пункт */
-ul.menu>li:hover>.submenu {
-	display: block;
-}
-
-ul.submenu>li>a {
-	padding: 10px;
-	display: block;
+.header nav .phone a:last-child {
+	font-size: calc(1em + (1.2 - 1) * (100vw - 36em) / 84);
+	/*font-weight: 500;*/
 }
 
 #address-container {
