@@ -104,6 +104,9 @@
         <div class="container">
             <div class="foottop">
                 <div class="column">
+                    <img src="/img/logo.svg" alt="" srcset="">
+                </div>
+                <div class="column">
                     <div>
                         <strong>Сервис</strong>
                         {{-- <a href="#">RentRide в России</a>
